@@ -22,7 +22,13 @@ services:
       - "8080:8080"
       - "3001:3001"
     working_dir: /djs-bot
-    command: ["npm", "run", "${ENABLE:-start}"]
+    depends_on:
+      - postgres-db
+    command: >
+      sh -c "
+      npx prisma generate && 
+      npx prisma db push &&
+      npm run ${ENABLE:-start}"
 
   dashboard:
     container_name: dashboard

@@ -6,7 +6,7 @@ module.exports = {
 	/**
 	 * Name of the bot 
 	 * @type {string} */
-	name: "InsertNameHereBot",
+	name: "Helix Music",
 	/**
 	 * Database option (mongodb, postgresql) https://www.prisma.io/docs/reference/database-reference/connection-urls
 	 * @type {string} */
@@ -81,13 +81,31 @@ module.exports = {
 			secure: false, // if lavalink is running SSL
 		},
 		{
-			identifier: "LocalNode", // log id string
-			host: "localhost",
+			identifier: "Main Node",
+			host: "v3.lavalink.rocks",
+			port: 80,
+			password: "horizxon.tech",
+			retryAmount: 200,
+			retryDelay: 40,
+			secure: false,
+		},
+		{
+			identifier: "Backup Node 2",
+			host: "lavalinkv3-id.serenetia.com",
+			port: 80,
+			password: "BatuManaBisa",
+			retryAmount: 200,
+			retryDelay: 40,
+			secure: false,
+		},
+		{
+			identifier: "Backup Node 3",
+			host: "lavalink-legacy.jompo.cloud",
 			port: 2333,
-			password: "youshallnotpass",
-			retryAmount: 15, // for lavalink connection attempts
-			retryDelay: 6000, // Delay between reconnect attempts if connection is lost.
-			secure: false, // if lavalink is running SSL
+			password: "jompo",
+			retryAmount: 200,
+			retryDelay: 40,
+			secure: false,
 		},
 	],
 
@@ -126,7 +144,7 @@ module.exports = {
 	/**
 	 * Color of the embeds (can also be hex)
 	 * @type {import('discord.js').ColorResolvable} */
-	embedColor: "Random",
+	embedColor: "#39f962",
 
 	/** 
 	 * PresenceData object | https://discord.js.org/#/docs/main/stable/typedef/PresenceData
@@ -164,7 +182,7 @@ module.exports = {
 	/** 
 	 * This icon will be in every embed's author field, if you don't want it, just leave it blank or "undefined"
 	 * @type {string} */
-	iconURL: undefined,
+	iconURL: "https://cdn.darrennathanael.com/icons/spinning_disk.gif",
 
 	defaultPlayerValues: {
 		twentyFourSeven: false,
