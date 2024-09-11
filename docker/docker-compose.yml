@@ -1,4 +1,6 @@
-version: '3.8'
+version: '3.8.1'
+
+name: djs-bot
 
 services:
   djs-bot:
@@ -29,20 +31,6 @@ services:
       npx prisma generate && 
       npx prisma db push &&
       npm run ${ENABLE:-start}"
-
-  dashboard:
-    container_name: dashboard
-    image: node:latest
-    restart: "unless-stopped"
-    init: true
-    stdin_open: true
-    tty: true
-    volumes:
-      - ../dashboard:/dashboard
-    ports:
-      - "3000:3000"
-    working_dir: /dashboard
-    command: ["npm", "run", "build-and-start"]
 
   postgres-db:
     image: postgres:15.2-alpine
