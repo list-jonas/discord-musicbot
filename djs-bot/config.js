@@ -72,6 +72,15 @@ module.exports = {
 	 * @type {import("erela.js").Node[]} */
 	nodes: [
 		{
+			identifier: "Docker Node",
+			host: "10.0.0.245",
+			port: 2333,
+			password: "youshallnotpass",
+			retryAmount: 200,
+			retryDelay: 40,
+			secure: false,
+		},
+		{
 			identifier: "Main Node",
 			host: "v3.lavalink.rocks",
 			port: 80,
